@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppFuncional</string>
+
+    <string name="pick_name">Nombre: </string>
+    <string name="pick_passw">Contraseña: </string>
+    <string name="btn_login">Ingresar</string>
+
+</resources>
