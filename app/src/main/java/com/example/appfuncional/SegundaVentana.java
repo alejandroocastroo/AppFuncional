@@ -36,4 +36,9 @@ public class SegundaVentana extends AppCompatActivity {
         go.addFlags(go.FLAG_ACTIVITY_CLEAR_TASK | go.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(go);
     }
+    public  void goToBD(View h){
+        Intent go = new Intent(this, BaseDeDatos.class);
+        go.addFlags(go.FLAG_ACTIVITY_CLEAR_TASK | go.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(go);
+    }
 }

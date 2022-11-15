@@ -18,8 +18,7 @@
     <ImageView
         android:layout_width="86dp"
         android:layout_height="55dp"
-        android:background="@android:drawable/ic_menu_day"
-        />
+        android:background="@android:drawable/ic_menu_day" />
 
     <EditText
         android:id="@+id/ed3"
@@ -37,12 +36,13 @@
 
         android:text="Inicio" />
 
-    <Button
 
-        android:id="@+id/buttonThird"
+    <Button
+        android:id="@+id/btnContactos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siguiente" />
+        android:onClick="goToBD"
+        android:text="Contactos" />
 
 
 </LinearLayout>
