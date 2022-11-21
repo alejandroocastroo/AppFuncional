@@ -9,9 +9,9 @@ import androidx.annotation.Nullable;
 public class DbHelper extends SQLiteOpenHelper {
 
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NOMBRE = "agenda.db";
-    private static final String TABLE_CONTACTOS = "t_contactos";
+    public static final String TABLE_CONTACTOS = "t_contactos";
 
 
 
