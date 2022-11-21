@@ -12,35 +12,36 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.appfuncional.db.DbContactos;
+import com.example.appfuncional.adaptadores.ListaContactosAdapter;
 
 import com.example.appfuncional.db.DbHelper;
+import com.example.appfuncional.entidades.Contactos;
+
+import java.util.ArrayList;
 
 public class BaseDeDatos extends AppCompatActivity {
 
-    Button btnCrearBD;
-
+    RecyclerView listaContactos;
+    ArrayList<Contactos> listaArrayContactos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_de_datos);
 
-        btnCrearBD = findViewById(R.id.btnCrearBD);
+        listaContactos = findViewById(R.id.listaContactos);
+        listaContactos.setLayoutManager(new LinearLayoutManager(this));
 
-        btnCrearBD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DbHelper dbHelper = new DbHelper(BaseDeDatos.this);
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                if(db != null){
-                    Toast.makeText(BaseDeDatos.this, "BASE DE DATOS CREADA", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(BaseDeDatos.this, "ERROR AL CREAR LA BASE DE DATOS", Toast.LENGTH_SHORT).show();
+        DbContactos dbContactos = new DbContactos(BaseDeDatos.this);
 
-                }
+        listaArrayContactos = new ArrayList<>();
 
-            }
-        });
+        ListaContactosAdapter adapter = new ListaContactosAdapter(dbContactos.mostrarContactos());
+        listaContactos.setAdapter(adapter);
     }
+
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_principal, menu);
