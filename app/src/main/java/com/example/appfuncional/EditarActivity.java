@@ -22,6 +22,7 @@ public class EditarActivity extends AppCompatActivity {
     FloatingActionButton fabEditar, fabEliminar;
     boolean correcto = false;
     Contactos contacto;
+
     int id = 0;
 
     @SuppressLint("RestrictedApi")
